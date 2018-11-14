@@ -1,0 +1,31 @@
+@charset "utf-8";
+* 						{margin: 0; padding: 0;}
+body					{font: 16px Georgia, serif;}
+
+#page-wrap				{margin: 2% auto; color: white;}
+#page-wrap >.main 		{border: 1px solid #999; padding: 1%;
+						 margin-bottom: 1px; color: black;}
+
+section > div			{padding: 20px; text-align: left;}
+header, nav, section	{background: #eee; text-align: center;}
+
+footer					{background: #eee; text-align: center;}
+nav span             	{ margin: 0px 10px 0px 0px;
+						  width: 100%;
+						  display: inline-block;}
+
+#ErrorMsgs          	{ color: #f61; font-size: smaler}
+
+#h1						{height: 40px;}
+#backButton				{float:left}
+
+#logInfo				{float:right; margin-top: -5px;}
+#loggedEmail			{float:left; margin-right: 20px; margin-top: 6%;}
+#argazkia				{float:right;}
+
+.irudiak				{border: 1px solid black;}
+#Ikaslea1				{float: left;}
+#Ikaslea2				{float: right;}
+
+#Bidali					{width: 70px;}
+#Garbitu				{width: 70px;}
