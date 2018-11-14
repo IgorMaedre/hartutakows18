@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="tipo_contenido" content="text/html;" http-equiv="content-type" charset="utf-8">
+	<title>Quizzes</title>
+    <link rel='stylesheet' type='text/css' href='styles/style.css' />
+    <link rel='stylesheet' type='text/css' href='styles/validation.css' />
+	<link rel='stylesheet' 
+		   type='text/css' 
+		   media='only screen and (min-width: 530px) and (min-device-width: 481px)'
+		   href='styles/wide.css' />
+	<link rel='stylesheet' 
+		   type='text/css' 
+		   media='only screen and (max-width: 480px)'
+		   href='styles/smartphone.css' />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="js/input.js"></script>
+  </head>
+  <body>
+  <div id='page-wrap'>
+	<header class='main' id='h1'>
+      <span class="right"><a href="/login">LogIn</a> </span>
+      <span class="right" style="display:none;"><a href="/logout">LogOut</a> </span>
+	<h2>Quiz: crazy questions</h2>
+    </header>
+	<nav class='main' id='n1' role='navigation'>
+		<span><a href='layout.html'>Home</a></span>
+		<span><a href='/quizzes'>Quizzes</a></span>
+		<span><a href='credits.html'>Credits</a></span>
+		<span><a href='addQuestion.html'>Add Question</a></span>
+		<span><a href='addQuestion5.html'>Add Question (HTML5)</a></span>
+	</nav>
+    <section class="main" id="s1">
+    
+	
+	<div class="container">
+		<form id="galderenF" name="galderenF" action="php/addQuestions.php" method="POST">
+			<label>Zure eposta: (*)</label> 
+			<input id="eposta" name="eposta" type="text" required pattern="[a-z]{5,}[0-9]{3}@ikasle.ehu.eus"><br>
+			<label>Galdera: (*)</label> 
+			<input id="galdera" name="galdera" type="text" required minlength="10"><br><br>
+			<label>Erantzun zuzena: (*)</label> 
+			<input id="ezuz" name="ezuz" type="text" required><br>
+			<label>Erantzun okerra1: (*)</label> 
+			<input id="eok1" name="eok1" type="text" required><br>
+			<label>Erantzun okerra2: (*)</label> 
+			<input id="eok2" name="eok2" type="text" required><br>
+			<label>Erantzun okerra3: (*)</label> 
+			<input id="eok3" name="eok3" type="text" required><br><br>
+			<label>Galderaren zailtasuna: (*)</label>
+			<select id="zail" name="zail" required>
+				<option value="0">0</option>
+  				<option value="1">1</option>
+  				<option value="2">2</option>
+  				<option value="3">3</option>
+  				<option value="4">4</option>
+  				<option value="5">5</option>
+			</select><br><br>
+			<label>Galderaren gaia: (*)</label> 
+			<input id="gaia" name="gaia" type="text" required><br><br>
+			<input type="submit" id="sub" value="Gehitu galdera"><br>
+		</form>
+	</div>
+    </section>
+	<footer class='main' id='f1'>
+		 <a href='https://github.com/IgorMaedre/ws18'>Link GITHUB</a>
+	</footer>
+</div>
+
+
+
+</body>
+</html>
