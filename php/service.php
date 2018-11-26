@@ -38,7 +38,7 @@
 			}
 			return $text;
 		} else {
-			return ('Emandako kodea ez da baliozkoa');
+			return ('ZERBITZURIK GABE');
 		}
 		
 	}

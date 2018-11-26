@@ -52,6 +52,7 @@
 				<a href='https://github.com'>Link GITHUB</a>
 			</footer>
 			<script>
+
 				document.getElementById("eposta").onblur = function() {checkEmail()};
 				function checkEmail() {
 					var posta = document.getElementById("eposta").value;
@@ -66,7 +67,6 @@
 						}
 
 					};
-
 					xmlhttp.open('GET', 'checkEmail.php?erabiltzailea=' + posta, true);
 					xmlhttp.send();
 				}
@@ -89,6 +89,7 @@
 					xmlhttp.open('GET', 'egiaztatuPasahitza.php?pasahitza=' + pw, true);
 					xmlhttp.send();
 				}
+
 			</script>
 		</div>	
 	</body>
@@ -100,6 +101,14 @@
 		$deitura = $galdera = preg_replace('/\s\s+/', ' ', trim($_POST['deitura']));
 		$pasahitza = $_POST['pasahitza'];
 		$pasahitzaErrepikatu = $_POST['pasahitzaErrepikatu'];
+
+		$emailfile = fopen("wsdlemailresponse.txt", "r") or die("Unable to open email file!");
+		$emailvalid = fread($emailfile,filesize("wsdlemailresponse.txt"));
+		fclose($emailfile);
+
+		$pwfile = fopen("wsdlpwresponse.txt", "r") or die("Unable to open pw file!");
+		$pwvalid = fread($pwfile,filesize("wsdlpwresponse.txt"));
+		fclose($pwfile);
 		
 		$argazkiTamaina = $_FILES['fitxategia']['size'];
 		if($argazkiTamaina > 0) {
@@ -133,8 +142,9 @@
 				$erroreak = $erroreak . "(hautazkoa) Irudiaren formatua okerra, irudiak '.jpg', '.jpeg', '.png', '.JPG', '.JPEG' edo '.PNG' luzapena eduki behar du";
 		}
 		
-		if (!empty($erroreak)) echo '<script> alert("'.$erroreak.'"); </script>';
-		else {
+		if (!empty($erroreak)){ echo '<script> alert("'.$erroreak.'"); </script>';
+		}else if (strcmp($emailvalid, 'EZ')==0 || strcmp($pwvalid, 'BALIOGABEA')==0) {echo '<script> alert("Eposta edo pasahitza ez dira baliozkoak!!"); </script>';
+		}else {
 			
 			include("dbConfig.php");
 			$linki= mysqli_connect($zerbitzaria,$erabiltzailea,$gakoa,$db);
@@ -144,8 +154,8 @@
 				
 				
 				$data = $linki->query("SELECT eposta FROM users WHERE eposta='".$eposta."'");			
-				if($data->num_rows != 0) echo '<script> alert("Eposta hori duen erabiltzailea jada erregistratuta dago"); </script>';
-				else {
+				if($data->num_rows != 0) {echo '<script> alert("Eposta hori duen erabiltzailea jada erregistratuta dago"); </script>';
+				}else {
 					$linki->query("INSERT INTO users(eposta, deitura, pasahitza, argazkia) values ('$eposta', '$deitura', '$pasahitza', '$argazkia')");					
 					$linki = 0;
 					
