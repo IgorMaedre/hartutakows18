@@ -34,9 +34,9 @@
 			<section class="main" id="s1">
 				<div>				
 				<form id="formularioa" action="signUp.php" method="post" enctype="multipart/form-data">
-					Eposta (*): <input type="text" class="input" name="eposta" size="50"/> <br><br>
+					Eposta (*): <input type="text" class="input" id="eposta" name="eposta" size="50"/> <p id="kar"></p><br><br>
 					Deitura (*): <input type="text" class="input" name="deitura" size="50"/> <br><br>
-					Pasahitza (*): <input type="password" class="input" name="pasahitza" size="50"/> <br><br>
+					Pasahitza (*): <input type="password" class="input" id="pasahitza" name="pasahitza" size="50"/> <br><br>
 					Pasahitza errepikatu (*): <input type="password" class="input" name="pasahitzaErrepikatu" size="50"/> <br><br>
 					Argazkia (hautazkoa): <input type="file" class="input" id="fitxategia" name="fitxategia"/> <br><br>
 					<div id="divIrudi"></div>
@@ -51,6 +51,45 @@
 			<footer class='main' id='f1'>
 				<a href='https://github.com'>Link GITHUB</a>
 			</footer>
+			<script>
+				document.getElementById("eposta").onblur = function() {checkEmail()};
+				function checkEmail() {
+					var posta = document.getElementById("eposta").value;
+					var xmlhttp = new XMLHttpRequest();
+
+					xmlhttp.onreadystatechange = function() {
+						
+						if (this.readyState == 4 && this.status == 200) {
+							
+							alert(this.responseText);
+
+						}
+
+					};
+
+					xmlhttp.open('GET', 'checkEmail.php?erabiltzailea=' + posta, true);
+					xmlhttp.send();
+				}
+
+				document.getElementById("pasahitza").onblur = function() {checkPw()};
+				function checkPw () {
+					var pw = document.getElementById("pasahitza").value;
+					var xmlhttp = new XMLHttpRequest();
+
+					xmlhttp.onreadystatechange = function() {
+						
+						if (this.readyState == 4 && this.status == 200) {
+							
+							alert(this.responseText);
+
+						}
+
+					};
+
+					xmlhttp.open('GET', 'egiaztatuPasahitza.php?pasahitza=' + pw, true);
+					xmlhttp.send();
+				}
+			</script>
 		</div>	
 	</body>
 </html>

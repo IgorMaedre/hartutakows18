@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html id="layout">
   <head>
     <meta name="tipo_contenido" content="text/html;" http-equiv="content-type" charset="utf-8">
@@ -18,7 +18,7 @@
   <body>
   <div id='page-wrap'>
 	<header class='main' id='h1'>
-		<span class='logeatuGabeak'><a href="login.php">LogIn</a> </span>
+		<span class='logeatuGabeak'><a href="logIn.php">LogIn</a> </span>
 		<span class='logeatuGabeak'><a href="signUp.php">SignUp</a> </span>
 		<span class='logeatuak'><a href="layout.php">LogOut</a> </span>
 		<div id="logInfo"></div>
@@ -29,13 +29,29 @@
 		<span><a href='<?php if (!empty($_GET['logged'])) {$id = $_GET['logged']; echo "layout.php?logged=$id";} else {echo "layout.php";} ?>'>Quizzes</a></span>
 		<span class='logeatuak'><a href='<?php if (!empty($_GET['logged'])) {$id = $_GET['logged']; echo "addQuestion.php?logged=$id";} ?>'>Add question</a></span>
 		<span class='logeatuak'><a href='<?php if (!empty($_GET['logged'])) {$id = $_GET['logged']; echo "showQuestions.php?logged=$id";} ?>'>Show questions</a></span>
-		<span class='logeatuak'><a href='<?php if (!empty($_GET['logged'])) {$id = $_GET['logged']; echo "showXMLQuestions.php?logged=$id";} ?>'>Show XML questions</a></span>
-		<span class='logeatuak'><a href='<?php if (!empty($_GET['logged'])) {$id = $_GET['logged']; echo "handlingQuizesAJAX.php?logged=$id";} ?>'>Show your questions</a></span>
+		<span class='logeatuak'><a href='<?php if (!empty($_GET['logged'])) {$id = $_GET['logged']; echo "showXMLQuestions.php?logged=$id";} ?>'>Show XML questions</a></span><span><a href='<?php $id=$_GET['logged']; echo "handlingQuizesAJAX.php?logged=$id"; ?>'>Show your questions</a></span>
 		<span><a href='<?php if (!empty($_GET['logged'])) {$id = $_GET['logged']; echo "credits.php?logged=$id";} else {echo "credits.php";} ?>'>Credits</a></span>
 	</nav>
     <section class="main" id="s1">
 		<div>
-		Quizzes and credits will be displayed in this spot in future laboratories ...
+		<?php
+
+			echo "<table><tr><th>Email</th><th>Question</th><th>Correct answer</th></tr>";
+			
+			$xml = simplexml_load_file("../questions.xml");
+			foreach ($xml->children() as $question) {
+				
+				$text = "<tr>";
+				$text .= "<td>" . $question['author'] . "</td>";
+				$text .= "<td>" . $question->itemBody->p . "</td>";
+				$text .= "<td>" . $question->correctResponse->value . "</td>";
+				$text .= "</tr>";
+				echo($text);
+			}
+
+			echo "</table>";
+			
+		?>
 		</div>
     </section>
 	<footer class='main' id='f1'>

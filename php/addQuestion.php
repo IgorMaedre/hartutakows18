@@ -31,6 +31,8 @@
 				<span><a href='<?php $id=$_GET['logged']; echo "layout.php?logged=$id"; ?>'>Home</a></span>
 				<span><a href='<?php $id=$_GET['logged']; echo "layout.php?logged=$id"; ?>'>Quizzes</a></span>
 				<span><a href='<?php $id=$_GET['logged']; echo "showQuestions.php?logged=$id"; ?>'>Show questions</a></span>
+				<span><a href='<?php $id=$_GET['logged']; echo "showXMLQuestions.php?logged=$id"; ?>'>Show XML questions</a></span>
+				<span><a href='<?php $id=$_GET['logged']; echo "handlingQuizesAJAX.php?logged=$id"; ?>'>Show your questions</a></span>
 				<span><a href='<?php $id=$_GET['logged']; echo "credits.php?logged=$id"; ?>'>Credits</a></span>
 				
 			</nav>

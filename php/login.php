@@ -31,7 +31,7 @@
 			
 			<section class="main" id="s1">
 				<div>				
-				<form action="logIn.php" method="post" enctype="multipart/form-data">
+				<form action="login.php" method="post" enctype="multipart/form-data">
 					Eposta (*): <input type="text" class="input" name="eposta" size="50"/> <br><br>
 					Pasahitza (*): <input type="password" class="input" name="pasahitza" size="50"/> <br><br>
 					

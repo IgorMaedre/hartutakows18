@@ -29,28 +29,31 @@
 		<span><a href='<?php if (!empty($_GET['logged'])) {$id = $_GET['logged']; echo "layout.php?logged=$id";} else {echo "layout.php";} ?>'>Quizzes</a></span>
 		<span class='logeatuak'><a href='<?php if (!empty($_GET['logged'])) {$id = $_GET['logged']; echo "addQuestion.php?logged=$id";} ?>'>Add question</a></span>
 		<span class='logeatuak'><a href='<?php if (!empty($_GET['logged'])) {$id = $_GET['logged']; echo "showQuestions.php?logged=$id";} ?>'>Show questions</a></span>
+		<span class='logeatuak'><a href='<?php if (!empty($_GET['logged'])) {$id = $_GET['logged']; echo "showXMLQuestions.php?logged=$id";} ?>'>Show XML questions</a></span>
+		<span><a href='<?php $id=$_GET['logged']; echo "handlingQuizesAJAX.php?logged=$id"; ?>'>Show your questions</a></span>
 	</nav>
     <section class="main" id="s1">
 		<div id="Ikaslea1">
 			<h2>Ikaslea1</h2> </br>
-			<strong>Izen-abizenak:</strong> Manex Lazkano </br>
+			<strong>Izen-abizenak:</strong> Iñigo Arnedo </br>
 			<strong>Espezielitatea:</strong> Konputazioa </br>
-			<strong>Bizilekua:</strong> Albiztur </br>
+			<strong>Bizilekua:</strong> Agurain </br>
 			<strong>Argazkia:</strong> </br>
-			<img class="irudiak" src="../images/ikasle1.jpg" width="175" height="175">
+			<img class="irudiak" src="../images/cred2.png" width="175" height="175">
 		</div>
 		
 		<div id="Ikaslea1">
 			<h2>Ikaslea2</h2> </br>
-			<strong>Izen-abizenak:</strong> Mikel Oiarbide </br>
-			<strong>Espezielitatea:</strong> Konputazioa </br>
-			<strong>Bizilekua:</strong> Alegia </br>
+			<strong>Izen-abizenak:</strong> Igor Lekuona </br>
+			<strong>Espezielitatea:</strong> Software Ingeniaritza </br>
+			<strong>Bizilekua:</strong> Zarautz </br>
 			<strong>Argazkia:</strong> </br>
-			<img class="irudiak" src="../images/ikasle2.jpg" width="175" height="175">
+			<img class="irudiak" src="../images/cred1.png" width="175" height="175">
 		</div>
     </section>
+    Webgune honek Manex Lazkano eta Mikel Oiarbide -ren webgunea du oinarri bezela.
 	<footer class='main' id='f1'>
-		 <a href='https://github.com'>Link GITHUB</a>
+		 <a href='https://github.com/IgorMaedre/'>Link GITHUB</a>
 	</footer>
   </div>
 </body>

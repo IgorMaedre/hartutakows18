@@ -7,7 +7,7 @@
 	   $zerbitzaria="localhost";
 	   $erabiltzailea="root";   // lokalean erabiltzailea root izan ohi da
 	   $gakoa="";               // eta ez da pasahitzarik jartzen
-	   $db="quiz";
+	   $db="quizz";
 	} else {
 	   $zerbitzaria="localhost";
 	   $erabiltzailea="id9999999_nineu";
