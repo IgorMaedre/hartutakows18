@@ -1,3 +1,4 @@
+<?php include('segurtasuna.php') ?>
 <!DOCTYPE html>
 <html id="layout">
   <head>
