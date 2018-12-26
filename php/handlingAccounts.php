@@ -24,14 +24,16 @@
 			</header>
 			
 			<nav class='main' id='n1' role='navigation'>
-				
+				<span><a href='<?php if (!empty($_GET['logged'])) {$id = $_GET['logged']; echo "layout.php?logged=$id";} else {echo "layout.php";} ?>'>Home</a></span>
+				<span><a href='<?php if (!empty($_GET['logged'])) {$id = $_GET['logged']; echo "layout.php?logged=$id";} else {echo "layout.php";} ?>'>Quizzes</a></span>
+				<span><a href='<?php $id=$_GET['logged']; echo "handlingAccounts.php?logged=$id"; ?>'>Manage accounts</a></span>
+				<span><a href='<?php $id=$_GET['logged']; echo "credits.php?logged=$id"; ?>'>Credits</a></span>
 			</nav>
 			
 			<section class="main" id="s1">
 				<div id="acctable">
 				
 				<?php
-					session_start();
 					$erab = $_SESSION['user'];
 					echo '<script>console.log("'.$erab.'");</script>';
 					if ($erab == 'admin') {

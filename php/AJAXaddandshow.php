@@ -41,8 +41,7 @@
 			$linki= mysqli_connect($zerbitzaria,$erabiltzailea,$gakoa,$db);				
 			if(!$linki) echo '<script> alert("Konexio errorea"); </script>';
 			else {
-				$linki->query("INSERT INTO questions(eposta, galderaTestua, erantzunZuzena, erantzunOkerra1, erantzunOkerra2, erantzunOkerra3, zailtasuna, arloa) 
-				values ('$eposta', '$galdera', '$erantzunZuzena', '$erantzunOkerra1', '$erantzunOkerra2', '$erantzunOkerra3', '$zailtasuna', '$arloa')");
+				$linki->query("INSERT INTO questions values ('', '$eposta', '$galdera', '$erantzunZuzena', '$erantzunOkerra1', '$erantzunOkerra2', '$erantzunOkerra3', '$zailtasuna', '$arloa', '')");
 				
 				$linki = 0;
 				$xml = simplexml_load_file('../questions.xml');

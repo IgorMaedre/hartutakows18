@@ -38,6 +38,7 @@
 					<input type="submit" name="saioaHasi" value="   Saioa hasi   "/>
 					<input type="reset" name="garbitu" value="     Garbitu     "/>
 				</form>
+				<br><span><a href="aldatuPasahitza.php"> Pasahitza berrezarri</a> </span>
 				</div>
 				
 			</section>
@@ -51,7 +52,6 @@
 
 <?php
 	if (isset($_POST['eposta'])) {
-		
 		$eposta = $_POST['eposta'];				
 		$pasahitza = $_POST['pasahitza'];
 		
@@ -64,14 +64,17 @@
 			$data = $linki->query("SELECT * FROM users WHERE eposta='".$eposta."'");		
 			if($data->num_rows != 0) {		
 				$erabiltzailea = $data->fetch_assoc();
-				if($pasahitza != $erabiltzailea['pasahitza']) { echo '<script> alert("Pasahitza okerra"); </script>';
+				$hash = $erabiltzailea['pasahitza'];
+				$rest = password_verify($pasahitza, $hash);
+				echo '<script>console.log("'.$pasahitza.' \n '.$hash.' \n poggers \n jebaited");</script>';
+				if(!$rest) { echo '<script> alert("Pasahitza okerra"); </script>';
 				} else if ($erabiltzailea['egoera'] != 0 && $erabiltzailea['ID'] != 28) { echo '<script> alert("Kontu hau desgaituta dago.\n Hitz egin administratzailearekin.");</script>';
 				} else {
 					$id = $erabiltzailea['ID'];
 					session_start();
 					if($id == 28){
 						$_SESSION['user'] = 'admin';
-						echo "<script>location.href='handlingAccounts.php';</script>";
+						echo "<script>location.href='handlingAccounts.php?logged=$id';</script>";
 					} else {
 						$_SESSION['user'] = 'ikasle';
 						echo "<script>location.href='handlingQuizesAJAX.php?logged=$id';</script>";

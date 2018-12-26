@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -27,10 +28,20 @@
 	<nav class='main' id='n1' role='navigation'>
 		<span><a href='<?php if (!empty($_GET['logged'])) {$id = $_GET['logged']; echo "layout.php?logged=$id";} else {echo "layout.php";} ?>'>Home</a></span>
 		<span><a href='<?php if (!empty($_GET['logged'])) {$id = $_GET['logged']; echo "layout.php?logged=$id";} else {echo "layout.php";} ?>'>Quizzes</a></span>
-		<span class='logeatuak'><a href='<?php if (!empty($_GET['logged'])) {$id = $_GET['logged']; echo "addQuestion.php?logged=$id";} ?>'>Add question</a></span>
+		<!--<span class='logeatuak'><a href='<?php if (!empty($_GET['logged'])) {$id = $_GET['logged']; echo "addQuestion.php?logged=$id";} ?>'>Add question</a></span>
 		<span class='logeatuak'><a href='<?php if (!empty($_GET['logged'])) {$id = $_GET['logged']; echo "showQuestions.php?logged=$id";} ?>'>Show questions</a></span>
-		<span class='logeatuak'><a href='<?php if (!empty($_GET['logged'])) {$id = $_GET['logged']; echo "showXMLQuestions.php?logged=$id";} ?>'>Show XML questions</a></span>
-		<span><a href='<?php $id=$_GET['logged']; echo "handlingQuizesAJAX.php?logged=$id"; ?>'>Show your questions</a></span>
+		<span class='logeatuak'><a href='<?php if (!empty($_GET['logged'])) {$id = $_GET['logged']; echo "showXMLQuestions.php?logged=$id";} ?>'>Show XML questions</a></span>-->
+		<?php
+		if (isset($_SESSION['user'])) {
+   			$id=$_GET['logged'];
+			if ($_SESSION['user'] == 'admin') {
+				echo "<span><a href='handlingAccounts.php?logged=$id'>Manage accounts</a></span>";
+			} else if ($_SESSION['user'] == 'ikasle') {
+				echo "<span><a href='handlingQuizesAJAX.php?logged=$id'>Show your questions</a></span>";
+			}
+		}
+		?>
+		<span><a href='<?php $id=$_GET['logged']; echo "credits.php?logged=$id"; ?>'>Credits</a></span>
 	</nav>
     <section class="main" id="s1">
 		<div id="Ikaslea1">

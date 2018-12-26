@@ -1,42 +1,121 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <assessmentItems>
-	<assessmentItem author="rosa001@ikasle.ehu.eus" subject="mikologia">
+	<assessmentItem author="jon011@ikasle.ehu.eus" subject="Elikadura">
 		<itemBody> 
-			<p>Zein Amanita da jangarria?</p>
+			<p>Zein elikagaik du proteina osatuena?</p>
 		</itemBody>
 		<correctResponse>
-			<value>Caesarea</value>
+			<value>Arrautzak</value>
 		</correctResponse>
 		<incorrectResponses>
-			<value>Phalloides</value>
-			<value>Muscaria</value>
-			<value>Virosa</value>
+			<value>Arrainak</value>
+			<value>Lekak</value>
+			<value>Haragiak</value>
 		</incorrectResponses>
 	</assessmentItem>
-	<assessmentItem author="rosa001@ikasle.ehu.eus" subject="mikologia">
+	<assessmentItem author="ikerolasagasti007@ikasle.ehu.eus" subject="Basozaintza">
 		<itemBody> 
-			<p>Onddoek zer dute kapela azpian?</p>
+			<p>Zein urtarotan komeni da zuhaitzak landatzea?</p>
 		</itemBody>
 		<correctResponse>
-			<value>Himenioa</value>
+			<value>Neguan</value>
 		</correctResponse>
 		<incorrectResponses>
-			<value>Filamenduak</value>
-			<value>Eztenak</value>
-			<value>Hodiak</value>
+			<value>Udazkenean</value>
+			<value>Udaberrian</value>
+			<value>Udan</value>
 		</incorrectResponses>
 	</assessmentItem>
-	<assessmentItem author="mafalda001@ikasle.ehu.eus" subject="mikologia">
+	<assessmentItem author="aeinstein@ikasle.ehu.eus" subject="Zientzia">
 		<itemBody>
-			<p>Eranztuna du</p>
+			<p>Zein da argiaren abiadura?</p>
 		</itemBody>
 		<correctResponse>
-			<value>Galanpernak</value>
+			<value>300.000 km/s</value>
 		</correctResponse>
 		<incorrectResponses>
-			<value>Gibel urdinak</value>
-			<value>Esnegorriak</value>
-			<value>Errotariak</value>
+			<value>700.000 km/s</value>
+			<value>200.000 km/s</value>
+			<value>100.000 km/s</value>
 		</incorrectResponses>
 	</assessmentItem>
-<assessmentItem author="ilekuona010@ikasle.ehu.eus" subject="Altuerak"><itemBody><p>Zeinek egiten du salto gehien?</p></itemBody><correctResponse><value>Dodge 3700 GT</value></correctResponse><incorrectResponses><value>Cheetah</value><value>Kangurua</value><value>Matxinsaltoa</value></incorrectResponses></assessmentItem><assessmentItem author="ilekuona010@ikasle.ehu.eus" subject="Pertsonaiak"><itemBody><p/></itemBody><correctResponse><value>Hildakoa</value></correctResponse><incorrectResponses><value>Adolfo laguntxoa</value><value>Terstch jauna</value><value>Malditos Bastardos-eko nazkagarria</value></incorrectResponses></assessmentItem><assessmentItem author="ilekuona010@ikasle.ehu.eus" subject="Pertsonaiak"><itemBody><p/></itemBody><correctResponse><value>88</value></correctResponse><incorrectResponses><value>3</value><value>69</value><value>420</value></incorrectResponses></assessmentItem><assessmentItem author="ilekuona010@ikasle.ehu.eus" subject="Pertsonaiak"><itemBody><p>Zein da Terstch jaunaren zenbaki gogokoena?</p></itemBody><correctResponse><value>88</value></correctResponse><incorrectResponses><value>3</value><value>69</value><value>420</value></incorrectResponses></assessmentItem></assessmentItems>
+	<assessmentItem author="pdaimaku999@ikasle.ehu.eus" subject="Marrazki Bizidunak">
+		<itemBody>
+			<p>Nor da Dragoi Bolako pertsonaia nagusia??</p>
+		</itemBody>
+		<correctResponse>
+			<value>Son Goku</value>
+		</correctResponse>
+		<incorrectResponses>
+			<value>Vegeta</value>
+			<value>Son Gohan</value>
+			<value>Satan Bihotz Txiki</value>
+		</incorrectResponses>
+	</assessmentItem>
+	<assessmentItem author="nagirre013@ikasle.ehu.eus" subject="Mendiak">
+		<itemBody>
+			<p>Zein da munduko mendirik altuena?</p>
+		</itemBody>
+		<correctResponse>
+			<value>Everest</value>
+		</correctResponse>
+		<incorrectResponses>
+			<value>Kilimanjaro</value>
+			<value>K2</value>
+			<value>Alpeak</value>
+		</incorrectResponses>
+	</assessmentItem>
+	<assessmentItem author="pwalker002@ikasle.ehu.eus" subject="Ibaiak">
+		<itemBody>
+			<p>Zein da Donostian itsasoratzen den ibaiaren izena?</p>
+		</itemBody>
+		<correctResponse>
+			<value>Urumea</value>
+		</correctResponse>
+		<incorrectResponses>
+			<value>Oria</value>
+			<value>Urola</value>
+			<value>Ebro</value>
+		</incorrectResponses>
+	</assessmentItem>
+	<assessmentItem author="ilekuona010@ikasle.ehu.eus" subject="Altuerak">
+		<itemBody>
+			<p>Zeinek egiten du jauzi altuen?</p>
+		</itemBody>
+		<correctResponse>
+			<value>Dodge 3700 GT</value>
+		</correctResponse>
+		<incorrectResponses>
+			<value>Cheetah</value>
+			<value>Kangurua</value>
+			<value>Matxinsaltoa</value>
+		</incorrectResponses>
+	</assessmentItem>
+	<assessmentItem author="ilekuona010@ikasle.ehu.eus" subject="Pertsonaiak">
+		<itemBody>
+			<p>Zein da Nazi hobeena?</p>
+		</itemBody>
+		<correctResponse>
+			<value>Hildakoa</value>
+		</correctResponse>
+		<incorrectResponses>
+			<value>Adolfo laguntxoa</value>
+			<value>Terstch jauna</value>
+			<value>Malditos Bastardos-eko nazkagarria</value>
+		</incorrectResponses>
+	</assessmentItem>
+	<assessmentItem author="ilekuona010@ikasle.ehu.eus" subject="Pertsonaiak">
+		<itemBody>
+			<p>Zein da Terstch jaunaren zenbaki gogokoena?</p>
+		</itemBody>
+		<correctResponse>
+			<value>88</value>
+		</correctResponse>
+		<incorrectResponses>
+			<value>3</value>
+			<value>69</value>
+			<value>420</value>
+		</incorrectResponses>
+	</assessmentItem>
+
+</assessmentItems>

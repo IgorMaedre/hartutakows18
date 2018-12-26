@@ -18,6 +18,8 @@
 		<script src="../js/addImage.js"></script>
 		<script src="../js/removeImage.js"></script>
 		<script>
+			$(document).ready(function() {shownumbers();});
+
 			function showfile() {
 				var erabiltzailea = document.getElementById('eposta').value;
 				var xmlhttp = new XMLHttpRequest();
@@ -35,7 +37,25 @@
 
 				xmlhttp.open('GET', 'AJAXshow.php?erabiltzailea=' + erabiltzailea, true);
 				xmlhttp.send();
+				shownumbers();
 
+			}
+
+			function shownumbers() {
+				var erabiltzailea = document.getElementById('eposta').value;
+				var xmlhttp = new XMLHttpRequest();
+				xmlhttp.onreadystatechange = function() {
+					
+					if (this.readyState == 4 && this.status == 200) {
+						
+						document.getElementById('questnum').innerHTML = this.responseText;
+
+					}
+
+				};
+
+				xmlhttp.open('GET', 'AJAXshowquestnum.php?erabiltzailea=' + erabiltzailea, true);
+				xmlhttp.send();
 			}
 		</script>
 		
@@ -55,8 +75,6 @@
 			<nav class='main' id='n1' role='navigation'>
 				<span><a href='<?php $id=$_GET['logged']; echo "layout.php?logged=$id"; ?>'>Home</a></span>
 				<span><a href='<?php $id=$_GET['logged']; echo "layout.php?logged=$id"; ?>'>Quizzes</a></span>
-				<span><a href='<?php $id=$_GET['logged']; echo "showQuestions.php?logged=$id"; ?>'>Show questions</a></span>
-				<span><a href='<?php $id=$_GET['logged']; echo "showXMLQuestions.php?logged=$id"; ?>'>Show XML questions</a></span>
 				<span><a href='<?php $id=$_GET['logged']; echo "handlingQuizesAJAX.php?logged=$id"; ?>'>Show your questions</a></span>
 				<span><a href='<?php $id=$_GET['logged']; echo "credits.php?logged=$id"; ?>'>Credits</a></span>
 				
@@ -86,6 +104,8 @@
 					<div id="divIrudi"></div>-->
 				</form>
 				<button id="gorde" onclick="gorde()">   Gorde   </button>&nbsp;&nbsp;&nbsp;&nbsp;<button id="erakutsi" onclick="showfile()">   Erakutsi   </button>
+
+				<br><br><div id="questnum"></div>
 								
 
 				</div>

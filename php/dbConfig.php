@@ -1,6 +1,8 @@
 <?php
 
 	$lokal=1; // lokalean gauedenean 1; hodeian 0
+	$EMAIL_USERNAME = 'ws1819t13';
+	$EMAIL_PASSWORD = '0XH7IDM9o5';
 
 
 	if ($lokal) {
